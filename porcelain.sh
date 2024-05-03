@@ -38,6 +38,7 @@ while true; do
     # Options
     echo -e "Please select a script to run:\n"
     echo "[1] Run the script to install the necessary packages"
+    echo "[2] Run the script to reveal the OS of the machine"
     echo -e "[0] Exit porcelain\n"
 
     read -p "Enter your choice: " choice
@@ -45,7 +46,20 @@ while true; do
     case $choice in
         1)
             echo "Running the script to install the necessary packages..."
-            bash install.sh
+            bash scripts/install.sh
+
+            if [ $? -eq 0 ]; then
+                echo "Script ran successfully!"
+            else
+                echo "An error occurred while running the script."
+            fi
+
+            read -p "Press [Enter] to continue..."
+            ;;
+
+        2)
+            echo "Running the script to reveal the OS of the machine..."
+            bash scripts/reveal-OS.sh
 
             if [ $? -eq 0 ]; then
                 echo "Script ran successfully!"
@@ -70,3 +84,6 @@ while true; do
 
     clear
 done
+
+
+
