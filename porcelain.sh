@@ -39,6 +39,7 @@ while true; do
     echo -e "Please select a script to run:\n"
     echo "[1] Run the script to install the necessary packages"
     echo "[2] Run the script to reveal the OS of the machine"
+    echo "[3] Run python script"
     echo -e "[0] Exit porcelain\n"
 
     read -p "Enter your choice: " choice
@@ -65,6 +66,19 @@ while true; do
                 echo "Script ran successfully!"
             else
                 echo "An error occurred while running the script."
+            fi
+
+            read -p "Press [Enter] to continue..."
+            ;;
+
+        3)
+            echo "Running python test script"
+            python3 scripts/networks/hello.py
+
+            if [ $? -eq 0 ]; then
+                echo "Python issa working :)"
+            else
+                echo "missing dependency?" 
             fi
 
             read -p "Press [Enter] to continue..."

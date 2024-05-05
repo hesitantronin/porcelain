@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "No dependecies yet!"
+sudo apt install python3
