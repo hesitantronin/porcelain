@@ -72,11 +72,11 @@ while true; do
             ;;
 
         3)
-            echo "Running python test script"
-            python3 scripts/networks/hello.py
+            echo "Running reveal-connected script"
+            python3 scripts/networks/reveal-connected.py
 
             if [ $? -eq 0 ]; then
-                echo "Python issa working :)"
+                echo "Ran succesfully!"
             else
                 echo "missing dependency?" 
             fi
